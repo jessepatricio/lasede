@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
 
+import PurchaseButton from '../../components/common/PurchaseButton';
+
 class Discount extends Component {
     
 state = {
@@ -20,7 +22,7 @@ disCounter = () => {
 componentDidUpdate(){
     setTimeout(()=>{
         this.disCounter()
-    }, 300)
+    }, 30)
 }
 
 render() {
@@ -42,7 +44,12 @@ render() {
                     <p>You can buy tickets online or any ticketing office near you.</p>
 
                     <div>
-                        Button
+                        <PurchaseButton 
+                            text="Purchase tickets"
+                            bck="#ffa800"
+                            color="#ffffff"
+                            link="http://google.com" 
+                        />
                     </div>
 
                 </div>
