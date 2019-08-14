@@ -8,11 +8,11 @@ const Featured = () => {
         
             <Carrousel />
 
-            <div className="artist_name">
+            {/* <div className="artist_name">
                 <div className="wrapper">
                     One OK Rock
                 </div>
-            </div>
+            </div> */}
 
             <Countdown />
 
