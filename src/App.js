@@ -6,6 +6,8 @@ import Featured from './components/featured';
 import VenueInfo from './components/venueInfo';
 import Highlights from './components/highlights';
 import Pricing from './components/pricing';
+import Location from './components/location';
+import Footer from './components/header_footer/Footer';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <VenueInfo />
       <Highlights />
       <Pricing />
+      <Location />
+      <Footer />
     </div>
   );
 }
