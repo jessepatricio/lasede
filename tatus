@@ -1,0 +1,10 @@
+[33mee372bb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m created build and deploy to surge
+[33m7d210dc[m added footer and sidedrawer function
+[33m080c903[m added location and footer
+[33m5cfbe5e[m added pricing
+[33m7f0c7cb[m added image in readme
+[33m25c6738[m added reusable purchase button
+[33mf08bdd7[m added venueinfo and highllights component
+[33mafc361d[m completerd countdown component
+[33mc48e058[m added countdown ui
+[33m252b21b[m added slick carousel slider and change artist for the event

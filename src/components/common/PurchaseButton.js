@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-import TicketIcon from '../../resources/images/icons/ticket.png';
+// Use public directory for icon assets
+const TicketIcon = '/icons/ticket.png';
 
 const PurchaseButton = (props) => {
     return (

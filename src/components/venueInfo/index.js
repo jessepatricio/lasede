@@ -1,8 +1,9 @@
 import React from 'react';
-import Zoom from 'react-reveal/Zoom';
+import { motion } from 'framer-motion';
 
-import icon_calendar from '../../resources/images/icons/calendar.png';
-import icon_location from '../../resources/images/icons/location.png';
+// Use public directory for icon assets
+const icon_calendar = '/icons/calendar.png';
+const icon_location = '/icons/location.png';
 
 
 const VenueInfo = () => {
@@ -11,49 +12,55 @@ const VenueInfo = () => {
             <div className="center_wrapper">
                 <div className="vn_wrapper">
 
-                    <Zoom duration={500}>
-                        <div className="vn_item">
-                            <div className="vn_outer">
-                                <div className="vn_inner">
-                                    <div className="vn_icon_square bck_red"></div>
-                                    <div    
-                                        className="vn_icon"
-                                        style={{
-                                            background: `url(${icon_calendar})`
-                                        }}
-                                    ></div>
-                                    <div className="vn_title">
-                                        Even Date & Time
-                                    </div>
-                                    <div className="vn_desc">
-                                        9 November 2016 @9.00 pm
-                                    </div>
+                    <motion.div 
+                        className="vn_item"
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <div className="vn_outer">
+                            <div className="vn_inner">
+                                <div className="vn_icon_square bck_red"></div>
+                                <div    
+                                    className="vn_icon"
+                                    style={{
+                                        background: `url(${icon_calendar})`
+                                    }}
+                                ></div>
+                                <div className="vn_title">
+                                    Even Date & Time
+                                </div>
+                                <div className="vn_desc">
+                                    9 November 2026 @9.00 pm
                                 </div>
                             </div>
                         </div>
-                    </Zoom>
+                    </motion.div>
                     
-                    <Zoom duration={500} delay={500}>
-                        <div className="vn_item">
-                            <div className="vn_outer">
-                                <div className="vn_inner">
-                                    <div className="vn_icon_square bck_yellow"></div>
-                                    <div    
-                                        className="vn_icon"
-                                        style={{
-                                            background: `url(${icon_location})`
-                                        }}
-                                    ></div>
-                                    <div className="vn_title">
-                                        Event Location
-                                    </div>
-                                    <div className="vn_desc">
-                                        AMW Arena, Makati, Philippines
-                                    </div>
+                    <motion.div 
+                        className="vn_item"
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                    >
+                        <div className="vn_outer">
+                            <div className="vn_inner">
+                                <div className="vn_icon_square bck_yellow"></div>
+                                <div    
+                                    className="vn_icon"
+                                    style={{
+                                        background: `url(${icon_location})`
+                                    }}
+                                ></div>
+                                <div className="vn_title">
+                                    Event Location
+                                </div>
+                                <div className="vn_desc">
+                                    AMW Arena, Makati, Philippines
                                 </div>
                             </div>
                         </div>
-                    </Zoom>
+                    </motion.div>
 
                 </div>
             </div>

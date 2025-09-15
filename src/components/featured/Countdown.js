@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Slide from 'react-reveal/Slide';
+import { motion } from 'framer-motion';
 
 class Countdown extends Component {
     state = {
-        deadline: 'Nov, 18, 2019',
+        deadline: 'Nov, 18, 2026',
         days: '0',
         hours: '0',
         mins: '0',
@@ -33,8 +33,12 @@ class Countdown extends Component {
     }
     render() {
         return (
-            <Slide left delay={1000}>
-            <div className="countdown_wrapper">
+            <motion.div 
+                className="countdown_wrapper"
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+            >
                 <div className="countdown_top">
                     Event start in
                 </div>
@@ -72,8 +76,7 @@ class Countdown extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
-            </Slide>
+            </motion.div>
         );
     }
 }

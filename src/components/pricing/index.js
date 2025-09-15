@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PurchaseButton from '../common/PurchaseButton';
-import Zoom from 'react-reveal/Zoom';
+import { motion } from 'framer-motion';
 
 export default class Pricing extends Component {
     
@@ -18,27 +18,31 @@ export default class Pricing extends Component {
     showBoxes = () => (
         
         this.state.prices.map((box,i)=>(
-            <Zoom delay={this.state.delay[i]} key={i}>
-                <div className="pricing_item">
-                    <div className="pricing_inner_wrapper">
-                        <div className="pricing_title">
-                            <span>${this.state.prices[i]}</span>
-                            <span>{this.state.boxes[i]}</span>
-                        </div>
-                        <div className="pricing_description">
-                            {this.state.desc[i]}
-                        </div>
-                        <div className="pricing_buttons">
-                            <PurchaseButton
-                                text="Purchase"
-                                bck="#ffa800"
-                                color="#ffffff"
-                                link={this.state.linkto[i]} 
-                            />        
-                        </div>
+            <motion.div 
+                key={i}
+                className="pricing_item"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: this.state.delay[i] / 1000 }}
+            >
+                <div className="pricing_inner_wrapper">
+                    <div className="pricing_title">
+                        <span>${this.state.prices[i]}</span>
+                        <span>{this.state.boxes[i]}</span>
+                    </div>
+                    <div className="pricing_description">
+                        {this.state.desc[i]}
+                    </div>
+                    <div className="pricing_buttons">
+                        <PurchaseButton
+                            text="Purchase"
+                            bck="#ffa800"
+                            color="#ffffff"
+                            link={this.state.linkto[i]} 
+                        />        
                     </div>
                 </div>
-            </Zoom>
+            </motion.div>
         ))
     )
 

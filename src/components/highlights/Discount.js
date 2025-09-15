@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Fade from 'react-reveal/Fade';
-import Slide from 'react-reveal/Slide';
+import { motion } from 'framer-motion';
 
 import PurchaseButton from '../../components/common/PurchaseButton';
 
@@ -30,16 +29,24 @@ render() {
         <div className="center_wrapper">
             <div className="discount_wrapper">
 
-                <Fade onReveal={()=> this.disCounter()}>
-                <div className="discount_porcentage">
+                <motion.div 
+                    className="discount_porcentage"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    onAnimationComplete={() => this.disCounter()}
+                >
                     <span>{this.state.cntStart}%</span>
                     <span>OFF</span>
-                </div>
-                </Fade>
+                </motion.div>
 
                 
-                <Slide right>
-                <div className="discount_description">
+                <motion.div 
+                    className="discount_description"
+                    initial={{ x: 100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
                     <h3>Purchase tickets before 20th June</h3>
                     <p>You can buy tickets online or any ticketing office near you.</p>
 
@@ -52,8 +59,7 @@ render() {
                         />
                     </div>
 
-                </div>
-                </Slide>
+                </motion.div>
 
 
 
